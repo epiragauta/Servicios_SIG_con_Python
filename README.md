@@ -8,15 +8,15 @@ Este proyecto proporciona una guía completa y estructurada para configurar y de
 
 ## Características
 
-- ✅ Configuración paso a paso de pygeoapi
-- ✅ Soporte para GeoPackage como fuente de datos
-- ✅ API REST conforme a estándares OGC API - Features
-- ✅ Documentación interactiva OpenAPI
-- ✅ Soporte multiidioma (español e inglés)
-- ✅ Scripts de automatización para instalación y configuración
-- ✅ Scripts de pruebas automatizadas
-- ✅ Configuración Docker incluida
-- ✅ Modo desarrollo y producción
+- Configuración paso a paso de pygeoapi
+- Soporte para GeoPackage como fuente de datos
+- API REST conforme a estándares OGC API - Features
+- Documentación interactiva OpenAPI
+- Soporte multiidioma (español e inglés)
+- Scripts de automatización para instalación y configuración
+- Scripts de pruebas automatizadas
+- Configuración Docker incluida
+- Modo desarrollo y producción
 
 ## Estructura del Proyecto
 
@@ -288,6 +288,7 @@ Las contribuciones son bienvenidas. Por favor:
 
 ## Autor
 
+Edwin Piragauta Vargas - 2025
 Proyecto creado como guía educativa para la configuración de pygeoapi.
 
 ## Soporte
