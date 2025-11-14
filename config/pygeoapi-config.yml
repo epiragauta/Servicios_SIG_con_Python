@@ -1,0 +1,97 @@
+server:
+    bind:
+        host: 0.0.0.0
+        port: 5000
+    url: http://localhost:5000
+    mimetype: application/json; charset=UTF-8
+    encoding: utf-8
+    gzip: false
+    languages:
+        - es
+        - en
+    cors: true
+    pretty_print: true
+    limit: 10
+    map:
+        url: https://tile.openstreetmap.org/{z}/{x}/{y}.png
+        attribution: '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap contributors</a>'
+
+logging:
+    level: INFO
+    logfile: logs/pygeoapi.log
+
+metadata:
+    identification:
+        title: Servicios SIG con Python - Amazonas
+        description: API de servicios geoespaciales para datos del Amazonas
+        keywords:
+            - geoespacial
+            - api
+            - amazonas
+            - SIG
+            - OGC API
+        keywords_type: theme
+        terms_of_service: https://creativecommons.org/licenses/by/4.0/
+        url: http://localhost:5000
+    license:
+        name: CC-BY 4.0 license
+        url: https://creativecommons.org/licenses/by/4.0/
+    provider:
+        name: Tu Organización
+        url: http://localhost:5000
+    contact:
+        name: Equipo Técnico
+        position: Administrador
+        address: Dirección
+        city: Ciudad
+        stateorprovince: Departamento
+        postalcode: 000000
+        country: Colombia
+        phone: +57-xxx-xxx-xxxx
+        email: contacto@ejemplo.com
+        url: http://localhost:5000
+
+resources:
+    amazonas:
+        type: collection
+        title:
+            es: Datos del Amazonas
+            en: Amazon Data
+        description:
+            es: Colección de datos geoespaciales del Amazonas
+            en: Geospatial data collection from the Amazon
+        keywords:
+            - amazonas
+            - colombia
+            - américa del sur
+            - biodiversidad
+        links:
+            - type: text/html
+              rel: canonical
+              title: Información
+              href: http://localhost:5000
+              hreflang: es
+        extents:
+            spatial:
+                bbox: [-80, -5, -65, 5]
+                crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+            temporal:
+                begin: null
+                end: null
+        providers:
+            - type: feature
+              name: OGR
+              data:
+                  source_type: gpkg
+                  source: datos/amazonas.gpkg
+                  source_srs: EPSG:4326
+                  target_srs: EPSG:4326
+                  source_capabilities:
+                      paging: True
+                  open_options:
+                      LIST_ALL_TABLES: NO
+                  gdal_ogr_options:
+                      EMPTY_AS_NULL: NO
+                      GDAL_CACHEMAX: 64
+              id_field: fid
+              title_field: nombre
