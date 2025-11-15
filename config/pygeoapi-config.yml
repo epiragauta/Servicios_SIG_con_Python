@@ -82,9 +82,8 @@ resources:
             - type: feature
               name: OGR
               data:
-                  source_type: gpkg
+                  source_type: GPKG
                   source: /data/amazonas.gpkg
-                  layer: dpto_amazonas
                   source_srs: EPSG:4326
                   target_srs: EPSG:4326
                   source_capabilities:
@@ -95,6 +94,7 @@ resources:
                       EMPTY_AS_NULL: NO
                       GDAL_CACHEMAX: 64
               id_field: fid
+              layer: dpto_amazonas
 
     puntos_administrativos:
         type: collection
@@ -126,9 +126,8 @@ resources:
             - type: feature
               name: OGR
               data:
-                  source_type: gpkg
+                  source_type: GPKG
                   source: /data/amazonas.gpkg
-                  layer: puntos_administrativos
                   source_srs: EPSG:4326
                   target_srs: EPSG:4326
                   source_capabilities:
@@ -139,3 +138,4 @@ resources:
                       EMPTY_AS_NULL: NO
                       GDAL_CACHEMAX: 64
               id_field: fid
+              layer: puntos_administrativos
