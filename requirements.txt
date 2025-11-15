@@ -1,7 +1,9 @@
+pygeoapi
 Babel
 click
 filelock
 Flask
+gunicorn
 jinja2
 jsonschema
 pydantic
@@ -16,3 +18,4 @@ requests
 shapely
 SQLAlchemy
 tinydb
+GDAL
