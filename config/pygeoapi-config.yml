@@ -18,7 +18,7 @@ server:
 
 logging:
     level: INFO
-    logfile: logs/pygeoapi.log
+    logfile: /tmp/pygeoapi.log
 
 metadata:
     identification:
@@ -83,7 +83,7 @@ resources:
               name: OGR
               data:
                   source_type: gpkg
-                  source: datos/amazonas.gpkg
+                  source: /data/amazonas.gpkg
                   source_srs: EPSG:4326
                   target_srs: EPSG:4326
                   source_capabilities:

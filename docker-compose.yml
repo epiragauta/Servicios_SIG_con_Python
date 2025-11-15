@@ -9,12 +9,11 @@ services:
     ports:
       - "5000:5000"
     volumes:
-      - ./config:/app/config:ro
-      - ./datos:/app/datos:ro
-      - ./logs:/app/logs
+      - ./config/pygeoapi-config.yml:/pygeoapi/local.config.yml:ro
+      - ./datos:/data:ro
     environment:
-      - PYGEOAPI_CONFIG=config/pygeoapi-config.yml
-      - PYGEOAPI_OPENAPI=config/openapi.yml
+      - PYGEOAPI_CONFIG=/pygeoapi/local.config.yml
+      - PYGEOAPI_OPENAPI=/pygeoapi/local.openapi.yml
     restart: unless-stopped
     networks:
       - pygeoapi-network
