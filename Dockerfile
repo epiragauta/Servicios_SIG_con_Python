@@ -8,6 +8,8 @@ RUN apt-get update && apt-get install -y \
     gdal-bin \
     libgdal-dev \
     libsqlite3-mod-spatialite \
+    python3-gdal \
+    curl \
     && rm -rf /var/lib/apt/lists/*
 
 # Crear directorio de trabajo
@@ -16,8 +18,10 @@ WORKDIR /app
 # Copiar requirements
 COPY requirements.txt .
 
-# Instalar dependencias de Python
-RUN pip install --no-cache-dir --upgrade pip && \
+# Instalar GDAL de Python con la versión correcta
+RUN export GDAL_VERSION=$(gdal-config --version) && \
+    pip install --no-cache-dir --upgrade pip && \
+    pip install --no-cache-dir GDAL==$GDAL_VERSION && \
     pip install --no-cache-dir -r requirements.txt
 
 # Copiar archivos del proyecto

@@ -18,4 +18,3 @@ requests
 shapely
 SQLAlchemy
 tinydb
-GDAL
